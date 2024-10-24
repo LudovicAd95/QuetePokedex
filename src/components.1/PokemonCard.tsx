@@ -1,7 +1,11 @@
+interface PokemonCardProp {
+    name : string;
+    imgSrc? : string;
 
+}
   
-  function PokemonCard(pokemon) {
-    
+  function PokemonCard ({pokemon}) {
+
     const imgValid = pokemon.imgSrc;
   
     return (
