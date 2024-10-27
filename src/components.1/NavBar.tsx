@@ -12,6 +12,13 @@ interface Pokemon {
   }
 
   function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
+
+    const handlePokemonSelect = (index: number) => {
+        setPokemonIndex(index);
+        if (pokemonList[index].name === "pikachu") {
+          alert("pika pikachu !!!");
+        }
+      };
     return (
       <section>
         <div>
@@ -19,14 +26,14 @@ interface Pokemon {
           <p>{pokemonIndex}</p>
           
           {pokemonList.map((pokemon, index) => (
-            <button key={pokemon.name} onClick={() => setPokemonIndex(index)}>
+            <button key={pokemon.name} onClick={() => handlePokemonSelect(index)}>
               {pokemon.name}
             </button>
           ))}
         </div>
-      </section>
+      </section> 
     );
-  }
+  };
   
 
-  export default NavBar;
+export default NavBar;
